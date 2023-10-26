@@ -1,66 +1,68 @@
- /*import 'dart:io';
+
+import 'dart:ffi';
+import 'dart:io';
+
+
 
 void main(List<String> args) {
 
-    print("--------------------hesap makinesi--------------------");
-
-    print("   |toplama islemi icin 1'e basiniz.");
-    print("   |cikarma islemi icin 2'ye basiniz.");
-    print("   |carpma islemi icin 3'e basiniz.");
-    print("   |bolme islemi icin 4'e basiniz.");
 
 
+    print("---yapmak istediğiniz islemi seciniz---");
+    print("   |toplama islemi icin a basiniz.");
+    print("   |cikarma islemi icin b basiniz.");
+    print("   |carpma islemi icin c basiniz.");
+    print("   |bolme islemi icin d basiniz.");
 
-     print("lütfen bi sayi giriniz.");
-     String sayi1 = double.parse(stdin.readLineSync());
-     print("lütfen bi sayi giriniz.");
-     String sayi2 = double.parse(stdin.readLineSync());
-     print("lutfen yapmak istediginiz islemi secin.");
-     String? islem = stdin.readLineSync();
+     print("seciminizi giriniz.");
+     String? w = stdin.readLineSync()!;
+
+     islem (w);
+
+}
+
+ void  islem (String x ){
+  //print("seciminizi giriniz.");
+  print("1.sayiyi giriniz.");
+  double sayi1 = double.parse(stdin.readLineSync()!);
+  print("2.sayiyi giriniz.");
+  double sayi2 = double.parse(stdin.readLineSync()!);
 
 
-
-
-
-
-
-   switch (islem) {
-    case "1":
-       toplama(int sayi1 , int sayi2);
+  switch (x) {
+    case "a":
+       toplama(sayi1,sayi2);
        break;
 
-    case "2":
-       cikarma(int sayi1 , int sayi2);
+    case "b":
+       cikarma(sayi1,sayi2,sayi3: );
        break;
 
-    case "3":
-       carpma(int sayi1 , int sayi2);
+    case "c":
+       carpma(sayi1,sayi2) ;
        break;
 
-    case "4":
-       bolme(int sayi1 , int sayi2);
+    case "d":
+       bolme(sayi1,sayi2);
        break;
      default:
      print("gecersiz bi islem yaptiniz.");
 
 
    }
-
+}
+void toplama (double sayi1 , double sayi2){
+ print("girdiginiz sayilarin toplami ${sayi1+sayi2}");
 }
 
- toplama (int sayi1 , int sayi2){
- print("girdiğginiz sayilarin toplami ${sayi1+sayi2}");
-}
-
-cikarma(int sayi1 , int sayi2){
+void cikarma({double sayi1 , double sayi2, double sayi3=0}){
   print("girdiginiz sayilarin farki ${sayi1-sayi2}");
 }
 
- carpma(int sayi1 ,int sayi2){
+ void carpma(double sayi1 ,double sayi2){
   print("girdiginiz sayilarin carpimi ${sayi1*sayi2}");
 }
 
- bolme(double sayi1,double sayi2){
+ void bolme(double sayi1,double sayi2){
   print("girdiginiz sayilarin bolumu ${sayi1/sayi2}");
 }
-*/
